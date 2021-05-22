@@ -11,6 +11,7 @@ public class QuickSort
 {
     private int comparisons;
 
+    // Insertion Sort, faster for smaller numbers of items
     public int insertionSort(int [] array, int low, int high) {
 
         int N = high - low + 1;
@@ -65,6 +66,7 @@ public class QuickSort
         return comparisons;
     }
 
+    // Pivot is the Last Element
     public int QuickSortPivotA(int [] array)
     {
         /*
@@ -117,6 +119,7 @@ public class QuickSort
         return 0;
     }
 
+    // Pivot is the First Element
     public int QuickSortPivotB(int [] array)
     {
         /*
@@ -136,7 +139,7 @@ public class QuickSort
         int pivot = array[low];
         int temp;
 
-        temp = array[high]; //Put pivot at the end of the array
+        temp = array[high];
         array[high] = array[low];
         array[low] = temp;
 
@@ -176,6 +179,7 @@ public class QuickSort
         return 0;
     }
 
+    // Pivot is the Middle Element
     public int QuickSortPivotC(int [] array)
     {
         /*
@@ -192,11 +196,11 @@ public class QuickSort
     private int QuickSortPivotC(int [] array, int low, int high)
     {
 
-        int floorOfNOverTwo = ((high  + 1 - low) / 2) + low; // add low to get back to the correct section of the array
+        int floorOfNOverTwo = ((high  + 1 - low) / 2) + low;
         int pivot = array[floorOfNOverTwo];
         int temp;
 
-        temp = array[high]; //Put pivot at the end of the array
+        temp = array[high];
         array[high] = array[floorOfNOverTwo];
         array[floorOfNOverTwo] = temp;
 
@@ -236,6 +240,7 @@ public class QuickSort
         return 0;
     }
 
+    // Pivot is the Median of First, Middle and Last Elements
     public int QuickSortPivotD(int [] array)
     {
         /*
@@ -273,7 +278,7 @@ public class QuickSort
         int pivot = array[medianIndex];
         int temp;
 
-        temp = array[high]; //Put pivot at the end of the array
+        temp = array[high];
         array[high] = array[medianIndex];
         array[medianIndex] = temp;
 
@@ -313,6 +318,7 @@ public class QuickSort
         return 0;
     }
 
+    // Pivot is median of Five Quartiles
     public int QuickSortPivotE(int [] array)
     {
         /*
@@ -360,7 +366,7 @@ public class QuickSort
         int pivot = array[medianIndex];
         int temp;
 
-        temp = array[high]; //Put pivot at the end of the array
+        temp = array[high];
         array[high] = array[medianIndex];
         array[medianIndex] = temp;
 
@@ -595,12 +601,7 @@ public class QuickSort
         Please do not change the function names as we will use them to
         grade your work.
         */
-
-
-        /**for (int i = 0; i < array.length; i++) {
-            System.out.println(i + ": " + array[i]);
-        } */
-
+        
         test('A', 1000, 123456789);
 
 
